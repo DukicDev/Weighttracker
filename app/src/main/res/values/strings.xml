@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Weight tracker</string>
+    <string name="enter_weight">"Enter your weight "</string>
+    <string name="add_button">ADD</string>
+    <string name="average_label">Seven Day Average:</string>
+    <string name="current_label">Current Weight:</string>
+</resources>
