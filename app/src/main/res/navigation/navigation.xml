@@ -7,4 +7,8 @@
         android:id="@+id/weightTrackerFragment"
         android:name="com.example.weighttracker.weightTracker.WeightTrackerFragment"
         android:label="WeightTrackerFragment" />
+    <fragment
+        android:id="@+id/weightHistoryFragment"
+        android:name="com.example.weighttracker.weightHistory.weightHistoryFragment"
+        android:label="@string/title_weight_history" />
 </navigation>

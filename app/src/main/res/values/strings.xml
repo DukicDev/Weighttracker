@@ -4,4 +4,7 @@
     <string name="add_button">ADD</string>
     <string name="average_label">Seven Day Average:</string>
     <string name="current_label">Current Weight:</string>
+    <string name="clear">Clear</string>
+    <string name="history">History</string>
+    <string name="title_weight_history">History</string>
 </resources>
