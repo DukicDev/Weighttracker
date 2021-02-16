@@ -31,7 +31,7 @@ class WeightTrackerFragment: Fragment() {
         binding.weightTrackerViewModel = weightTrackerViewModel
 
         weightTrackerViewModel.allEntries.observe(this, Observer {
-            binding.avgWeightText.text = weightTrackerViewModel.calcAvg(it).toString()
+            binding.avgWeightText.text = String.format("%.1f", weightTrackerViewModel.calcAvg(it))
         })
 
         return binding.root
