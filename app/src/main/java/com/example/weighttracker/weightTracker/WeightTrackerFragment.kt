@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.weighttracker.R
 import com.example.weighttracker.database.WeightDatabase
@@ -28,6 +29,7 @@ class WeightTrackerFragment: Fragment() {
 
         binding.lifecycleOwner = this
         binding.weightTrackerViewModel = weightTrackerViewModel
+
 
         return binding.root
     }

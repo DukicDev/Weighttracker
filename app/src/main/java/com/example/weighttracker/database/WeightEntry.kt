@@ -10,5 +10,8 @@ data class WeightEntry(
     var weightId: Long = 0L,
 
     @ColumnInfo
-    val currentTime: Long = System.currentTimeMillis()
+    val currentTime: Long = System.currentTimeMillis(),
+
+    @ColumnInfo
+    val weight: Double = 0.0
 )
