@@ -1,6 +1,7 @@
 package com.example.weighttracker.weightTracker
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,14 @@ class WeightTrackerFragment: Fragment() {
 
         weightTrackerViewModel.allEntries.observe(this, Observer {
             binding.avgWeightText.text = String.format("%.1f", weightTrackerViewModel.calcAvg(it))
+        })
+
+        weightTrackerViewModel.eventOnAddButtonClick.observe(this, Observer {
+            if (it){
+                val newWeight = binding.addWeightText.text.toString().toDouble()
+                weightTrackerViewModel.addWeight(newWeight)
+                weightTrackerViewModel.finishedOnAdd()
+            }
         })
 
         return binding.root

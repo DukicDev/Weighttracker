@@ -14,8 +14,11 @@ application: Application): AndroidViewModel(application) {
 
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
-
     val allEntries = database.getAllEntries()
+
+    private val _eventOnAddButtonClick = MutableLiveData<Boolean>()
+    val eventOnAddButtonClick: LiveData<Boolean>
+    get() = _eventOnAddButtonClick
 
     fun calcAvg(entries: List<WeightEntry>): Double{
         val counter: Int = 7.coerceAtMost(entries.size)
@@ -25,6 +28,27 @@ application: Application): AndroidViewModel(application) {
         }
         result /= counter
         return result
+    }
+
+    fun onAdd(){
+        _eventOnAddButtonClick.value = true
+    }
+
+    fun addWeight(weightValue: Double){
+        uiScope.launch {
+            val newWeight = WeightEntry(weight = weightValue)
+            insert(newWeight)
+        }
+    }
+
+    private suspend fun insert(weightEntry: WeightEntry){
+        return withContext(Dispatchers.IO){
+            database.insert(weightEntry)
+        }
+    }
+
+    fun finishedOnAdd(){
+        _eventOnAddButtonClick.value = false
     }
 
     override fun onCleared() {
