@@ -2,4 +2,5 @@
 <resources>
     <dimen name="weight_size">144sp</dimen>
     <dimen name="weight_size_third">36sp</dimen>
+    <dimen name="margin">16dp</dimen>
 </resources>

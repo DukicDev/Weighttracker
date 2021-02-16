@@ -21,12 +21,14 @@ application: Application): AndroidViewModel(application) {
     get() = _eventOnAddButtonClick
 
     fun calcAvg(entries: List<WeightEntry>): Double{
-        val counter: Int = 7.coerceAtMost(entries.size)
         var result: Double = 0.0
-        for (elem in entries.subList(0, counter)){
-            result += elem.weight
+        if (!entries.isNullOrEmpty()){
+            val counter: Int = 7.coerceAtMost(entries.size)
+            for (elem in entries.subList(0, counter)){
+                result += elem.weight
+            }
+            result /= counter
         }
-        result /= counter
         return result
     }
 
