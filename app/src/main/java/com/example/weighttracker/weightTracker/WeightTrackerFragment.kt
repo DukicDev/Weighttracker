@@ -30,6 +30,9 @@ class WeightTrackerFragment: Fragment() {
         binding.lifecycleOwner = this
         binding.weightTrackerViewModel = weightTrackerViewModel
 
+        weightTrackerViewModel.allEntries.observe(this, Observer {
+            binding.avgWeightText.text = weightTrackerViewModel.calcAvg(it).toString()
+        })
 
         return binding.root
     }

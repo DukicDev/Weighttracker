@@ -15,6 +15,17 @@ application: Application): AndroidViewModel(application) {
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
+    val allEntries = database.getAllEntries()
+
+    fun calcAvg(entries: List<WeightEntry>): Double{
+        val counter: Int = 7.coerceAtMost(entries.size)
+        var result: Double = 0.0
+        for (elem in entries.subList(0, counter)){
+            result += elem.weight
+        }
+        result /= counter
+        return result
+    }
 
     override fun onCleared() {
         super.onCleared()
