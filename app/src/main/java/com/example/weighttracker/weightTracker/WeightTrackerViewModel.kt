@@ -12,6 +12,8 @@ import kotlinx.coroutines.*
 class WeightTrackerViewModel(private val database: WeightDatabaseDao,
 application: Application): AndroidViewModel(application) {
 
+    //TODO: Fix adding after clear bug
+
     private var viewModelJob = Job()
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
     val allEntries = database.getAllEntries()
