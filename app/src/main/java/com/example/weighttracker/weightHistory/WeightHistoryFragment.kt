@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.findNavController
 import com.example.weighttracker.R
 import com.example.weighttracker.database.WeightDatabase
 import com.example.weighttracker.databinding.FragmentWeightHistoryBinding
@@ -37,6 +39,10 @@ class WeightHistoryFragment: Fragment() {
                 weightHistoryViewModel.finishedClear()
             }
         })
+
+        val callBack = requireActivity().onBackPressedDispatcher.addCallback(this){
+            requireView().findNavController().navigate(WeightHistoryFragmentDirections.actionWeightHistoryFragmentToWeightTrackerFragment())
+        }
 
         return binding.root
     }

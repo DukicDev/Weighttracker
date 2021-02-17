@@ -10,5 +10,10 @@
     <fragment
         android:id="@+id/weightHistoryFragment"
         android:name="com.example.weighttracker.weightHistory.WeightHistoryFragment"
-        android:label="@string/title_weight_history" />
+        android:label="@string/title_weight_history" >
+        <action
+            android:id="@+id/action_weightHistoryFragment_to_weightTrackerFragment"
+            app:destination="@id/weightTrackerFragment"
+            app:popUpTo="@id/weightTrackerFragment" />
+    </fragment>
 </navigation>
