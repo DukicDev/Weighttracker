@@ -4,4 +4,12 @@
     <string name="add_button">ADD</string>
     <string name="average_label">Seven Day Average:</string>
     <string name="current_label">Current Weight:</string>
+    <string name="clear">Clear</string>
+    <string name="history">History</string>
+    <string name="title_weight_history">fragment_weight_history</string>
+
+    <string name="title"><![CDATA[<h3>HERE IS YOUR WEIGHT DATA</h3>]]></string>
+    <string name="date"><![CDATA[<b>Date:</b>]]></string>
+    <string name="weight"><![CDATA[<b>Weight:</b>]]></string>
+
 </resources>
