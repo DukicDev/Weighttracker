@@ -7,6 +7,8 @@ App for tracking weight changes over time.
 
 ## The way the app works:
 
+![Screenshot of the Main Activity](Screenshots/Main_Screen.jpg) ![Screenshot of the History Activity](Screenshots/History_Screen.jpg)
+
 Once a day the user puts his weight into the app, the average weight of the last 7 days gets calculated and shown. <br/>
 The reason for this is, that, in my opinion, tracking weight is best with using average values, since weight tends to rise and fall on a day to day basis. <br/>
 <br/>
